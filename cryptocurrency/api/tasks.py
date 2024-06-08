@@ -6,9 +6,10 @@ from coinmarketcap import CoinMarketCap
 def fetch_cryptocurrency_data(coin_name, job_id):
     coin_market_cap = CoinMarketCap()
     coin_details = coin_market_cap.get_coin_details(coin_name)
-
     job = Job.objects.get(job_id=job_id)
+    print("got job")
     task = Task.objects.create(job=job, coin=coin_name)
+    print("task created")
     output = Output.objects.create(
         task=task,
         price=coin_details["price"],
