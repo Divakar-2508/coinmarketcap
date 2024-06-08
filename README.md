@@ -1,1 +1,1 @@
-![screenshot](admin_page.png)
+![screenshot](admin_page_tables.png)
